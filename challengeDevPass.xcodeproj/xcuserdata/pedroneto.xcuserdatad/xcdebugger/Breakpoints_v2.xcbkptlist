@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8272F155-7D47-4BC6-B663-421E54964404"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85571F23-EF4B-4C76-B976-77D725BE52EC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challengeDevPass/Views/Components/DescriptionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "setupView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D94E677-E31C-4B2A-AD7B-DF37D2016F05"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challengeDevPass/Views/DetailView/DetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "DetailViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "6D94E677-E31C-4B2A-AD7B-DF37D2016F05 - 6d7a93d7c8c67f4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challengeDevPass.DetailViewController.repo.getter : Swift.Optional&lt;challengeDevPass.RepositoryModel&gt;"
+                  moduleName = "challengeDevPass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroneto/Documents/Developer/iOS/challenge-onboarding/challengeDevPass/challengeDevPass/Views/DetailView/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "647">
+               </Location>
+               <Location
+                  uuid = "6D94E677-E31C-4B2A-AD7B-DF37D2016F05 - ef6a70b1e34577b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challengeDevPass.DetailViewController.repo.setter : Swift.Optional&lt;challengeDevPass.RepositoryModel&gt;"
+                  moduleName = "challengeDevPass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroneto/Documents/Developer/iOS/challenge-onboarding/challengeDevPass/challengeDevPass/Views/DetailView/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "6D94E677-E31C-4B2A-AD7B-DF37D2016F05 - 8a68546eaac2304d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challengeDevPass.DetailViewController.repo.modify : Swift.Optional&lt;challengeDevPass.RepositoryModel&gt;"
+                  moduleName = "challengeDevPass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroneto/Documents/Developer/iOS/challenge-onboarding/challengeDevPass/challengeDevPass/Views/DetailView/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "6D94E677-E31C-4B2A-AD7B-DF37D2016F05 - 45628a69077e079d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challengeDevPass.DetailViewController.repo.modify : Swift.Optional&lt;challengeDevPass.RepositoryModel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "challengeDevPass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroneto/Documents/Developer/iOS/challenge-onboarding/challengeDevPass/challengeDevPass/Views/DetailView/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "6D94E677-E31C-4B2A-AD7B-DF37D2016F05 - 559f900b023f43ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challengeDevPass.DetailViewController.init(style: __C.UITableViewStyle) -&gt; challengeDevPass.DetailViewController"
+                  moduleName = "challengeDevPass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroneto/Documents/Developer/iOS/challenge-onboarding/challengeDevPass/challengeDevPass/Views/DetailView/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "6D94E677-E31C-4B2A-AD7B-DF37D2016F05 - bdbce8451d1a8558"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challengeDevPass.DetailViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; challengeDevPass.DetailViewController"
+                  moduleName = "challengeDevPass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroneto/Documents/Developer/iOS/challenge-onboarding/challengeDevPass/challengeDevPass/Views/DetailView/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "117">
+               </Location>
+               <Location
+                  uuid = "6D94E677-E31C-4B2A-AD7B-DF37D2016F05 - 7915e7493acf3996"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challengeDevPass.DetailViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;challengeDevPass.DetailViewController&gt;"
+                  moduleName = "challengeDevPass"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroneto/Documents/Developer/iOS/challenge-onboarding/challengeDevPass/challengeDevPass/Views/DetailView/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "74">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F1472F2-D57D-471B-8E11-C38B3BB59B04"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challengeDevPass/Views/Components/DescriptionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "load(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0AEF810-88BF-4A27-B9A3-96D3D84D3320"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challengeDevPass/Views/Components/DescriptionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "load(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E01B0E10-95CA-445B-A580-434489750693"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challengeDevPass/Views/Components/DescriptionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "setupView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
