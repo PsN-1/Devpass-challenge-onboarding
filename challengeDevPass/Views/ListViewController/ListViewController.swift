@@ -14,14 +14,21 @@ class ListViewController: UITableViewController {
     var repoList = [RepositoryModel]()
     
     lazy var notFoundView = NotFoundMessageCell()
+    lazy var loadingView = ActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.cellName)
+        tableView.clearsContextBeforeDrawing = true
+        setupAdicionalViewConfiguration()
+    }
+    
+    func setupAdicionalViewConfiguration() {
         setupNavigationBar()
         setupSearchBar()
         setupNotFoundMessageCell()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.cellName)
+        setupLoadingView()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,6 +56,7 @@ class ListViewController: UITableViewController {
     }
     
     func reloadData() {
+        loadingView.isHidden = true
         notFoundView.isHidden = !repoList.isEmpty
         tableView.isScrollEnabled = !repoList.isEmpty
         tableView.separatorStyle = repoList.isEmpty ? .none : .singleLine
@@ -58,6 +66,7 @@ class ListViewController: UITableViewController {
 
 extension ListViewController {
     func loadFromWebFor(_ user: String) {
+        showLoadingView()
         Networking.doGetReposFor(user) { response in
             if let response = response as? [RepositoryModel] {
                 self.repoList = response
@@ -76,13 +85,26 @@ extension ListViewController {
             notFoundView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
         ])
     }
+    
+    func setupLoadingView() {
+        view.addSubview(loadingView)
+        loadingView.isHidden = true
+        NSLayoutConstraint.activate([
+            loadingView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor, constant: -160),
+            loadingView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+        ])
+    }
+    
+    func showLoadingView() {
+        notFoundView.isHidden = true
+        loadingView.isHidden = false
+    }
 }
 
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate  {
     
     func setupNavigationBar() {
         title = "Repository List"
-//        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsButtonTapped))
     }
     
