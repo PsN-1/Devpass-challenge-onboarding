@@ -18,6 +18,8 @@
 		66AE0F90277BEAF800DC5053 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE0F8F277BEAF800DC5053 /* Coordinator.swift */; };
 		66AE0F92277BEB0100DC5053 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE0F91277BEB0100DC5053 /* MainCoordinator.swift */; };
 		66AE0F94277BFAAF00DC5053 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AE0F93277BFAAF00DC5053 /* Constants.swift */; };
+		66DB61CD277DEC6500F859F3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DB61CC277DEC6500F859F3 /* SettingsViewController.swift */; };
+		66DB61CF277DFB2A00F859F3 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DB61CE277DFB2A00F859F3 /* SettingsModel.swift */; };
 		66F91646277C945300C2BAD9 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F91645277C945300C2BAD9 /* RepositoryModel.swift */; };
 		66F91648277CA08100C2BAD9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F91647277CA08100C2BAD9 /* DetailViewController.swift */; };
 		66F9164F277CA21000C2BAD9 /* DescriptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F9164E277CA21000C2BAD9 /* DescriptionViewCell.swift */; };
@@ -57,6 +59,8 @@
 		66AE0F8F277BEAF800DC5053 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		66AE0F91277BEB0100DC5053 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		66AE0F93277BFAAF00DC5053 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		66DB61CC277DEC6500F859F3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		66DB61CE277DFB2A00F859F3 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		66F91645277C945300C2BAD9 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		66F91647277CA08100C2BAD9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		66F9164E277CA21000C2BAD9 /* DescriptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewCell.swift; sourceTree = "<group>"; };
@@ -139,10 +143,27 @@
 			path = challengeDevPassUITests;
 			sourceTree = "<group>";
 		};
+		66DB61CA277DEC4200F859F3 /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66AE0F63277BEA7A00DC5053 /* ListViewController.swift */,
+			);
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
+		66DB61CB277DEC5000F859F3 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66DB61CC277DEC6500F859F3 /* SettingsViewController.swift */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
 		66F91649277CA1A000C2BAD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				66F91645277C945300C2BAD9 /* RepositoryModel.swift */,
+				66DB61CE277DFB2A00F859F3 /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,9 +171,10 @@
 		66F9164A277CA1A400C2BAD9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66DB61CB277DEC5000F859F3 /* SettingsViewController */,
+				66DB61CA277DEC4200F859F3 /* ListViewController */,
 				66F9164D277CA1FD00C2BAD9 /* Custom Cells */,
 				66F91652277CACCE00C2BAD9 /* DetailView */,
-				66AE0F63277BEA7A00DC5053 /* ListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,8 +345,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66DB61CF277DFB2A00F859F3 /* SettingsModel.swift in Sources */,
 				66AE0F90277BEAF800DC5053 /* Coordinator.swift in Sources */,
 				66F9165C277CFCFE00C2BAD9 /* Networking.swift in Sources */,
+				66DB61CD277DEC6500F859F3 /* SettingsViewController.swift in Sources */,
 				66AE0F64277BEA7A00DC5053 /* ListViewController.swift in Sources */,
 				66AE0F60277BEA7A00DC5053 /* AppDelegate.swift in Sources */,
 				66F9164F277CA21000C2BAD9 /* DescriptionViewCell.swift in Sources */,
@@ -514,7 +538,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.sa.challengeDevPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -541,7 +565,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.sa.challengeDevPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

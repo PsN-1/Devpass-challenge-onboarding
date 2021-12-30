@@ -14,15 +14,28 @@ class MainCoordinator: Coordinator {
     
     func goToListViewController() {
         let viewController = ListViewController()
-        viewController.onCellSelected = { repoSelected in
+        viewController.onSettingsPressed = goToSettingsView
+        viewController.onCellSelected =  { repoSelected in
             self.goToDetailViewAt(repoSelected)
         }
-        navigationController.pushViewController(viewController, animated: true)
+    
+        show(viewController)
     }
     
     func goToDetailViewAt(_ repoSelected: RepositoryModel) {
         let viewController = DetailViewController()
         viewController.repo = repoSelected
-        navigationController.pushViewController(viewController, animated: true)
+        show(viewController)
+    }
+    
+    func goToSettingsView() {
+        let viewController = SettingsViewController()
+        let navVC = UINavigationController(rootViewController: viewController)
+        
+        navigationController.present(navVC, animated: true)
+    }
+    
+    func show(_ viewController: UIViewController, animated: Bool = true) {
+        navigationController.pushViewController(viewController, animated: animated)
     }
 }

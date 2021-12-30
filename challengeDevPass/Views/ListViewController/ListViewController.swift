@@ -10,21 +10,21 @@ import UIKit
 class ListViewController: UITableViewController {
 
     var onCellSelected: ((RepositoryModel) -> Void)?
+    var onSettingsPressed: (() -> Void)?
     var repoList = [RepositoryModel]()
     var githubUser = "PsN-1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFromwebFor(githubUser)
-        title = "Repository List"
+        
+        setupNavigationBar()
         setupSearchBar()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.cellName)
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsButtonTapped))
+        loadFromwebFor(githubUser)
     }
     
     @objc func settingsButtonTapped() {
-        print("settingsButtonTapped")
+        onSettingsPressed?()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,6 +61,12 @@ extension ListViewController {
 }
 
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate  {
+    
+    func setupNavigationBar() {
+        title = "Repository List"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsButtonTapped))
+    }
     
     func setupSearchBar() {
         navigationItem.searchController = UISearchController()
