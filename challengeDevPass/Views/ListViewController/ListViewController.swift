@@ -96,6 +96,8 @@ extension ListViewController {
     }
     
     func showLoadingView() {
+        repoList.removeAll()
+        tableView.reloadData()
         notFoundView.isHidden = true
         loadingView.isHidden = false
     }
