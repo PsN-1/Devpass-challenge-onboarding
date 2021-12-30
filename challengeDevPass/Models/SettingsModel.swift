@@ -18,7 +18,7 @@ struct ActiveItem {
 }
 
 struct Settings {
-    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
     func getSettingsOptions() -> [Option] {
         [

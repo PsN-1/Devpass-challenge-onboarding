@@ -12,19 +12,16 @@ class ListViewController: UITableViewController {
     var onCellSelected: ((RepositoryModel) -> Void)?
     var onSettingsPressed: (() -> Void)?
     var repoList = [RepositoryModel]()
-    var githubUser = "PsN-1"
+    
+    lazy var notFoundView = NotFoundMessageCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
         setupSearchBar()
+        setupNotFoundMessageCell()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.cellName)
-        loadFromwebFor(githubUser)
-    }
-    
-    @objc func settingsButtonTapped() {
-        onSettingsPressed?()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,14 +29,13 @@ class ListViewController: UITableViewController {
         
         var cell = tableView.dequeueReusableCell(withIdentifier: K.cellName, for: indexPath)
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: K.cellName)
-        cell.textLabel?.text = "\(repo.name ?? "")"
+        cell.textLabel?.text =  repo.name
         cell.detailTextLabel?.text = repo.language
         cell.accessoryType = .disclosureIndicator
         
         return cell
     }
     
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         repoList.count
     }
@@ -47,16 +43,38 @@ class ListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onCellSelected?(repoList[indexPath.row])
     }
+    
+    @objc func settingsButtonTapped() {
+        onSettingsPressed?()
+    }
+    
+    func reloadData() {
+        notFoundView.isHidden = !repoList.isEmpty
+        tableView.isScrollEnabled = !repoList.isEmpty
+        tableView.separatorStyle = repoList.isEmpty ? .none : .singleLine
+        tableView.reloadData()
+    }
 }
 
 extension ListViewController {
-    func loadFromwebFor(_ user: String) {
+    func loadFromWebFor(_ user: String) {
         Networking.doGetReposFor(user) { response in
             if let response = response as? [RepositoryModel] {
                 self.repoList = response
-                self.tableView.reloadData()
+                self.reloadData()
             }
         }
+    }
+}
+
+extension ListViewController {
+    func setupNotFoundMessageCell() {
+        view.addSubview(notFoundView)
+    
+        NSLayoutConstraint.activate([
+            notFoundView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor, constant: -160),
+            notFoundView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+        ])
     }
 }
 
@@ -64,7 +82,7 @@ extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate  {
     
     func setupNavigationBar() {
         title = "Repository List"
-        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsButtonTapped))
     }
     
@@ -78,6 +96,6 @@ extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate  {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let user = searchBar.text
-        loadFromwebFor(user ?? "")
+        loadFromWebFor(user ?? "")
     }
 }
