@@ -79,7 +79,7 @@ extension ListViewController {
 extension ListViewController {
     func setupNotFoundMessageCell() {
         view.addSubview(notFoundView)
-    
+        notFoundView.isHidden = true
         NSLayoutConstraint.activate([
             notFoundView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor, constant: -160),
             notFoundView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
@@ -96,10 +96,15 @@ extension ListViewController {
     }
     
     func showLoadingView() {
+        clearTableView()
+        loadingView.isHidden = false
+    }
+    
+    func clearTableView() {
         repoList.removeAll()
         tableView.reloadData()
         notFoundView.isHidden = true
-        loadingView.isHidden = false
+        loadingView.isHidden = true
     }
 }
 
@@ -107,7 +112,7 @@ extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate  {
     
     func setupNavigationBar() {
         title = "Repository List"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(settingsButtonTapped))
     }
     
     func setupSearchBar() {
@@ -121,5 +126,9 @@ extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate  {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let user = searchBar.text
         loadFromWebFor(user ?? "")
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        clearTableView()
     }
 }
